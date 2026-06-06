@@ -4,6 +4,8 @@
 
 I have architected and deployed a serverless, continuous compliance auditing engine on AWS using Infrastructure as Code (IaC) primitives. This project demonstrates an automated governance framework designed to detect, catalog, and alert on real-time infrastructure misconfigurations and security baseline drift. The system leverages a zero-maintenance, decoupled architecture that inspects peripheral network access vectors and cloud storage perimeters without introducing operational disruption. By executing a programmatic audit loop on a recurring cron schedule, the engine records active infrastructure anomalies into an on-demand database registry and streams instant diagnostic alerting payloads directly to engineering teams within milliseconds of drift detection.
 
+---
+
 ### The Problem
 
 As cloud infrastructure grows across enterprise landscapes, tracking configuration accuracy manually becomes a mathematical impossibility. Fast-paced development loops frequently introduce subtle but high-risk configuration errors that expose corporate assets to the public web. Traditional compliance mechanisms consistently fail due to three architectural limitations:
