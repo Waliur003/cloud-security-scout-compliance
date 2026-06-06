@@ -16,6 +16,8 @@ As cloud infrastructure grows across enterprise landscapes, tracking configurati
 
 * **Operational Blind Spots and Silent Drift:** Peripheral security groups and block parameters frequently suffer from unauthorized mutations. Lacking an automated, decoupled notification engine to immediately flag misconfigurations, security units operate blindly, unaware of vulnerabilities until an active threat actor exploits them.
 
+---
+
 ### The Solution
 
 * **Serverless Compute Auditing:** Engineered an automated layer-7 scanner using AWS Lambda running Python and the AWS SDK (Boto3), abstracting the compute footprint entirely to minimize operating overhead while systematically parsing infrastructure state arrays.
@@ -25,6 +27,8 @@ As cloud infrastructure grows across enterprise landscapes, tracking configurati
 * **Sub-Millisecond Alerting Fabric:** Constructed a decoupled Pub-Sub messaging topology via Amazon SNS that routes critical security group and access block mutations instantly to engineering mailboxes the moment a baseline deviation is evaluated.
 
 * **Automated Clock-Triggered Invocations:** Integrated an Amazon EventBridge Scheduler routine executing strict cron definitions, shrinking the threat window down to less than 24 hours by evaluating the cloud ecosystem automatically during low-traffic windows.
+
+---
 
 ### Tech Stack
 
@@ -40,7 +44,11 @@ As cloud infrastructure grows across enterprise landscapes, tracking configurati
 
 * **IaC Automation Framework:** Terraform (v1.0+ / Modularized Declarative Configuration Arrays)
 
+---
+
 ### Architecture Diagram
+
+---
 
 ### Project Procedure
 
@@ -85,6 +93,8 @@ I finalized the continuous monitoring loop by structuring an asynchronous schedu
 * **Cron Expression Mapping:** Configured an Amazon EventBridge Scheduler rule utilizing recurring expressions timed strictly to launch at 2:00 AM nightly.
 
 * **Invocation Clearance Validation:** Attached explicit cross-service Lambda invocation rules allowing the EventBridge principal to safely trigger the function executor across internal boundaries without manual system intervention.
+
+---
 
 ### Infrastructure as Code (IaC) Architecture
 
@@ -134,6 +144,8 @@ cloud-security-scout-compliance/
 
 * **Cron Execution Rule:** Handles the automated cron scheduling loop and includes the mandatory aws_lambda_permission block to clear cross-service invocation blocks.
 
+---
+
 ### Verification and Results
 
 #### Verified S3 Perimeter Drift Interception
@@ -147,6 +159,8 @@ Injected a testing security group policy containing a standard wide-open port al
 #### Confirmed Database State Insertion & Alert Output Delivery
 
 Inspected the system outputs immediately following the infrastructure injection test cycles. The Amazon DynamoDB lookup index correctly committed persistent records cataloging unique item IDs, exact timestamps, and specific target resource tags. Simultaneously, the Pub-Sub notification layer compiled a detailed diagnostic message block and successfully delivered a formatted emergency warning summary straight to the engineering monitoring inbox.
+
+---
 
 ### Verification Screenshots
 
@@ -173,6 +187,7 @@ Refer to the verification image named image_finding_alert.png. This screenshot d
 Refer to the validation image named image_dynamodb_records.png. This screenshot captures the Amazon DynamoDB Item Explorer interface showing the updated tracking registry. It validates successful, on-demand logging of the system findings, displaying structural columns for unique UUID tokens, active statuses, and specific resource identification values.
 <img width="1919" height="765" alt="Screenshot 4" src="https://github.com/user-attachments/assets/d0a50ece-e4d9-486a-a70c-5589c31daeb8" />
 
+---
 
 ### Future Improvements
 
@@ -181,6 +196,8 @@ Refer to the validation image named image_dynamodb_records.png. This screenshot 
 * **Automated Remediation Workflows:** Interface the output loops directly with AWS Step Functions to trigger automated healing actions, such as programmatically applying a public access block immediately upon drift discovery.
 
 * **Centralized Security Hub Aggregation:** Modify the output logic patterns to pipe database findings straight into AWS Security Hub as custom security compliance insights, aligning the platform with global enterprise operational consoles.
+
+---
 
 ### Notes
 
