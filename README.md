@@ -47,6 +47,7 @@ As cloud infrastructure grows across enterprise landscapes, tracking configurati
 ---
 
 ### Architecture Diagram
+<img width="1169" height="827" alt="Architecture Diagram" src="https://github.com/user-attachments/assets/875b7af5-abeb-4d9c-9ad0-07a85c413d69" />
 
 ---
 
